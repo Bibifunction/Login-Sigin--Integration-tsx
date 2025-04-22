@@ -1,0 +1,24 @@
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-bg {
+  background-color: var(--color-background-login);
+}
+
+.signin-bg {
+  background-color: var(--color-background-signin);
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+  
