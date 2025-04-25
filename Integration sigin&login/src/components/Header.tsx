@@ -1,13 +1,20 @@
-import "../styles/Header.css"
+import type React from "react"
+import "./Header.css"
 
-export const Header = () => {
+interface HeaderProps {
+  logoSrc: string
+}
+
+const Header: React.FC<HeaderProps> = ({ logoSrc }) => {
   return (
     <header className="header">
-      <a href="#" onClick={(e) => { e.preventDefault(); window.navigateTo("login"); }}>
-        <img src="/src/assets/public/logo.svg" alt="PawPlay Logo" className="logo" />
-      </a>
+      <img src={logoSrc || "/placeholder.svg"} alt="PawPlay Logo" className="header__logo" />
     </header>
   )
 }
 
 export default Header
+
+
+
+

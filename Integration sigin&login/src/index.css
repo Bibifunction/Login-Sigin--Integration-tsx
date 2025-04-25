@@ -1,15 +1,17 @@
-/* Import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap");
 
 :root {
   /* Colors */
+ 
   --color-background-login: hsla(32, 40%, 61%, 1);
-  --color-background-signin: hsla(29, 90%, 76%, 100%); 
+  --color-background-signin: hsla(29, 90%, 76%, 100%);
   --color-white: hsla(0, 0%, 100%, 100%);
   --color-black: hsla(0, 0%, 0%, 100%);
   --color-gray: hsla(0, 0%, 47%, 100%);
   --color-button: hsla(213, 48%, 49%, 100%);
+  --color-text-dark: hsla(0, 0%, 10%, 1);
+  --color-text-medium: hsla(0, 0%, 47%, 1);
 
   /* Font families */
   --font-primary: "Fredoka", sans-serif;
@@ -38,12 +40,19 @@
   box-sizing: border-box;
 }
 
+/* Update the body and html styles to prevent scrolling */
+html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+}
+
+body {
   font-family: var(--font-primary);
+  background-color: var(--color-background);
   color: var(--color-black);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,21 +63,33 @@ a {
   color: inherit;
 }
 
-/* Reset button styles */
+/* Estilos base para botones */
 button {
   cursor: pointer;
   border: none;
   font-family: inherit;
-  background: none;
-  padding: 0;
 }
 
-/* Reset input styles */
+/* Estilos base para inputs */
 input,
 textarea,
 select {
   font-family: inherit;
   font-size: inherit;
 }
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+
+
+
 
 

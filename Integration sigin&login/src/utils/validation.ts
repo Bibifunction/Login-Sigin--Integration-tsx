@@ -1,51 +1,99 @@
 /**
+ * Password validation utility functions
+ */
+
+interface ValidationResult {
+  isValid: boolean
+  message: string
+}
+
+/**
+ * Validates a password based on common security requirements
+ * @param password - The password to validate
+ * @returns ValidationResult object with isValid flag and message
+ */
+export function validatePassword(password: string): ValidationResult {
+  // Empty password check
+  if (!password) {
+    return {
+      isValid: false,
+      message: "Password is required",
+    }
+  }
+
+  // Length check
+  if (password.length < 8) {
+    return {
+      isValid: false,
+      message: "Password must be at least 8 characters long",
+    }
+  }
+
+  // Check for uppercase letter
+  if (!/[A-Z]/.test(password)) {
+    return {
+      isValid: false,
+      message: "Password must contain at least one uppercase letter",
+    }
+  }
+
+  // Check for lowercase letter
+  if (!/[a-z]/.test(password)) {
+    return {
+      isValid: false,
+      message: "Password must contain at least one lowercase letter",
+    }
+  }
+
+  // Check for number
+  if (!/\d/.test(password)) {
+    return {
+      isValid: false,
+      message: "Password must contain at least one number",
+    }
+  }
+
+  // Check for special character
+  if (!/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password)) {
+    return {
+      isValid: false,
+      message: "Password must contain at least one special character",
+    }
+  }
+
+  // If all checks pass
+  return {
+    isValid: true,
+    message: "",
+  }
+}
+
+/**
  * Validates an email address
  * @param email - The email to validate
- * @returns Error message or empty string if valid
+ * @returns ValidationResult object with isValid flag and message
  */
-export const validateEmail = (email: string): string => {
+export function validateEmail(email: string): ValidationResult {
   if (!email) {
-    return "Email is required";
+    return {
+      isValid: false,
+      message: "Email is required",
+    }
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Basic email format validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   if (!emailRegex.test(email)) {
-    return "Please enter a valid email address";
+    return {
+      isValid: false,
+      message: "Please enter a valid email address",
+    }
   }
 
-  return "";
-};
-
-/**
- * Validates a password
- * @param password - The password to validate
- * @returns Error message or empty string if valid
- */
-export const validatePassword = (password: string): string => {
-  if (!password) {
-    return "Password is required";
+  return {
+    isValid: true,
+    message: "",
   }
+}
 
-  if (password.length < 6) {
-    return "Password must be at least 6 characters";
-  }
 
-  return "";
-};
-
-/**
- * Validates a name field
- * @param name - The name to validate
- * @returns Error message or empty string if valid
- */
-export const validateName = (name: string): string => {
-  if (!name) {
-    return "This field is required";
-  }
-
-  if (name.length < 2) {
-    return "Name must be at least 2 characters";
-  }
-
-  return "";
-};
