@@ -4,7 +4,6 @@ import "./ForgotPassword.css"
 import { validateEmail } from "../../utils/validation"
 import Spinner from "../Spinner"
 
-// Add custom navigation prop
 interface ForgotPasswordProps {
   customNavigation: {
     navigate: (path: string) => void

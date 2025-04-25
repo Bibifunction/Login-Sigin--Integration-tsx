@@ -8,7 +8,7 @@ import imageSrc from "../../assets/imagen1.png"
 import { validateEmail, validatePassword } from "../../utils/validation"
 import Spinner from "../Spinner"
 
-// Add custom navigation prop
+
 interface SignInProps {
   customNavigation: {
     navigate: (path: string) => void
@@ -61,19 +61,19 @@ const SignIn: React.FC<SignInProps> = ({ customNavigation }) => {
 
     setErrors(newErrors)
 
-    // Check if there are any errors
+
     if (Object.values(newErrors).some((error) => error !== "")) {
       return
     }
 
-    // Form is valid, proceed with submission
+    
     setIsLoading(true)
 
     try {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500))
       console.log("Form submitted:", formData)
-      // Here you would typically send the data to your API
+      
     } catch (error) {
       console.error("Error submitting form:", error)
     } finally {

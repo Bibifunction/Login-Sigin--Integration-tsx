@@ -1,4 +1,4 @@
-/* Login specific styles */
+
 /* Main  */
 .main {
   width: 100%;
@@ -12,7 +12,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: 1.5rem; /* Adjust for header */
+  margin-top: 1.5rem; 
 
 }
 

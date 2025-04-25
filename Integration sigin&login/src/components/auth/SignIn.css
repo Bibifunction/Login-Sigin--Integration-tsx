@@ -130,7 +130,7 @@
   border: none;
   border-radius: 2rem;
   padding: 0.5rem 0;
-  font-family: var(--font-input); /* Atkinson Hyperlegible */
+  font-family: var(--font-input); 
   font-size: var(--font-size-base);
   font-weight: 500;
   cursor: pointer;

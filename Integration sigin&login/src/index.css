@@ -40,7 +40,6 @@
   box-sizing: border-box;
 }
 
-/* Update the body and html styles to prevent scrolling */
 html,
 body {
   height: 100%;

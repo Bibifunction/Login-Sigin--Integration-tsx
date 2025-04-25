@@ -1,4 +1,3 @@
-/* Common Button Styles for all forms */
 .button,
 .signin__button,
 .form__button,
@@ -36,7 +35,7 @@
   transform: translateY(1px);
 }
 
-/* Add disabled state for buttons */
+
 .button:disabled,
 .signin__button:disabled,
 .form__button:disabled,
@@ -70,7 +69,7 @@
   height: 3rem;
 }
 
-/* Forgot password button is larger by default */
+
 .forgot-password__button {
   width: 8rem;
 }
